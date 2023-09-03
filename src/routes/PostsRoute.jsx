@@ -8,6 +8,8 @@ const Posts = () => {
     return (
         <>
             <h1>Posts Page</h1>
+            <hr />
+            <h2>Create Post</h2>
             <Form method="post">
                 <div>
                     <label htmlFor="title">Post title</label>
@@ -19,7 +21,7 @@ const Posts = () => {
                 </div>
             </Form>
             <hr />
-            <h2>Posts</h2>
+            <h2>Posts List</h2>
             {posts.map((post) => (
                 <div key={post.id}>
                     <h3>{post.title}</h3>
@@ -27,7 +29,7 @@ const Posts = () => {
                 </div>
             ))}
             <hr />
-            <h2>Comments</h2>
+            <h2>Comments List</h2>
             {comments.map((comment) => (
                 <div key={comment.id}>
                     <h3>{comment.name}</h3>
