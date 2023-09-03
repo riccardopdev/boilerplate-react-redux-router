@@ -1,11 +1,15 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 
 const RootLayout = () => {
+    const { state } = useNavigation();
+    const isLoading = state === 'loading';
+
     return (
         <>
             <NavigationBar />
-            <Outlet />
+            <ScrollRestoration />
+            {isLoading ? <h2>Loading...</h2> : <Outlet />}
         </>
     );
 };
